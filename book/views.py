@@ -10,7 +10,7 @@ from django.views import View
 class BookView(View):
 
     def get(self, request):
-        res = SimpleBook.objects.all()
+        res = SimpleBook.objects.all().order_by('name')
         return render(request, 'pb.html', {'res': res})
 
 
@@ -33,14 +33,25 @@ class NewContact(View):
 class UpdateContact(View):
     def get(self, request):
         obj = SimpleBook.objects.get(id=request.GET.get('id'))
+        print('res:', obj.name)
         return render(request, 'uc.html', {'res': obj})
 
     def post(self, request):
-        print('here')
         updated_entry = SimpleBook.objects.get(id=request.POST.get('id'))  # object to update
         updated_entry.name = request.POST.get('name')
         updated_entry.phone = request.POST.get('phone')
         updated_entry.e_mail = request.POST.get('email')
         updated_entry.more = request.POST.get('more')
         updated_entry.save()
+        return HttpResponseRedirect("/phone_book/")
+
+
+class RemoveContact(View):
+    def get(self, request):
+        obj = SimpleBook.objects.get(id=request.GET.get('id'))
+        return render(request, 'rc.html', {'res': obj})
+
+    def post(self, request):
+        removed_entry = SimpleBook.objects.get(id=request.POST.get('id'))  # object to update
+        removed_entry.delete()
         return HttpResponseRedirect("/phone_book/")

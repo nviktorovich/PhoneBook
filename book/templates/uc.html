@@ -7,11 +7,11 @@
 
 <form method="post" enctype="multipart/form-data" action="/phone_book/update/">
     {% csrf_token %}
-    <input type="text" id="name" name="name" value={{ res.name }}>
-    <input type="text" id="phone" name="phone" value={{ res.phone }}>
-    <input type="text" id="email" name="email" value={{ res.e_mail }}>
-    <input type="text" id="more" name="more" value={{ res.more }}>
-    <input type="hidden" id="id" name="id" value={{ res.id }}>
+    <input type="text" id="name" name="name" value="{{ res.name }}" style='size="200"'>
+    <input type="text" id="phone" name="phone" value="{{ res.phone }}">
+    <input type="text" id="email" name="email" value="{{ res.e_mail }}">
+    <input type="text" id="more" name="more" value="{{ res.more }}">
+    <input type="hidden" id="id" name="id" value="{{ res.id }}">
     <input id="submit" type="submit" value="Обновить">
 
 
