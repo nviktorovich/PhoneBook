@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remove contact</title>
+</head>
+
+<form method="post" enctype="multipart/form-data" action="/phone_book/remove/">
+    {% csrf_token %}
+    <h1>Вы действительно хотите удалить контакт</h1>
+    <div>
+        <p>name: {{ res.name }}</p>
+    </div>
+    <div>
+        <p>phone: {{ res.phone }}</p>
+    </div>
+    <div>
+        <p>email: {{ res.e_mail }}</p>
+    </div>
+    <div>
+        <p>more: {{ res.more }}</p>
+    </div>
+
+    <input type="hidden" id="id" name="id" value={{ res.id }}>
+    <input id="submit" type="submit" value="Удалить">
+
+
+</form>
+
+
+
+<body>
+<h1>Hello</h1>
+</body>
+</html>
