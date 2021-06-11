@@ -1,1 +1,1 @@
-web: gunicorn pb-1-0.wsgi --log-file -
+web: gunicorn pbtest1.wsgi --log-file -
