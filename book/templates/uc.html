@@ -4,22 +4,91 @@
     <meta charset="UTF-8">
     <title>Update contact</title>
 </head>
-
+<body>
 <form method="post" enctype="multipart/form-data" action="/phone_book/update/">
     {% csrf_token %}
-    <input type="text" id="name" name="name" value="{{ res.name }}" style='size="200"'>
-    <input type="text" id="phone" name="phone" value="{{ res.phone }}">
-    <input type="text" id="email" name="email" value="{{ res.e_mail }}">
-    <input type="text" id="more" name="more" value="{{ res.more }}">
+    <div class="container" style="background-color: white; margin: 1rem auto; border: 5px solid #405798; border-radius: 10px; text-indent: 1.5em; position: relative;">
+        <table style="width:100%">
+          <tr style="text-align: left; white-space:nowrap;">
+            <th>
+                <p>
+                    <label for="second_name">Фамилия: </label> <input type="text" id="second_name" name="second_name" value="{{ res.second_name }}" 
+                </p>
+            </th>
+            <th>
+                <p>
+                    <label for="first_name">Имя: </label> <input type="text" id="first_name" name="first_name" value="{{ res.first_name }}">
+                </p>
+            </th> 
+            <th>
+                <p>
+                    <label for="fathers_name">Отчество: </label> <input type="text" id="fathers_name" name="fathers_name" value="{{ res.fathers_name }}"> 
+                </p>                       
+            </th>
+          </tr>
+        </table>
+
+        <table style="width:100%" align="left">
+            <tr style="text-align: left; max-width:100%; white-space:nowrap;">
+                <th>
+                    <p>
+                        <label for="company">Организация: </label> <input type="text" id="company" name="company" value="{{ res.company }}" size="60"> 
+                    </p>
+                </th>
+                
+                <th>
+                     <p>
+                        <label for="job_title">Должность: </label> <input type="text" id="job_title" name="job_title" value="{{ res.job_title }}"> 
+                    </p>
+
+                </th> 
+                
+            </tr>
+        </table>
+
+    
+    <div>
+        <p>
+            <label for="phone1">Телефон №1: </label> <input type="text" id="phone1" name="phone1" value="{{ res.phone1 }}">
+        </p>
+        <p>
+            <label for="phone2">Телефон №2: </label> <input type="text" id="phone2" name="phone2" value="{{ res.phone2 }}">
+        </p>
+        <p>
+            <label for="phone3">Телефон №3: </label> <input type="text" id="phone3" name="phone3" value="{{ res.phone3 }}">
+        </p>
+            
+    </div>
+    <div>
+        <p>
+           <label for="email">Email: </label> <input type="text" id="email" name="email" value="{{ res.email }}"> 
+        </p>
+        
+    </div>
+
+    <div>
+        <p>
+            <label for="address">Адрес: </label><input type="text" id="address" name="address" value="{{ res.address }}" size="60"> 
+        </p>
+        
+    </div>
+   <div>
+    <p>
+      <label for="more">Дополнительно: </label>  <input type="text" id="more" name="more" value="{{ res.more }}" size="60"> 
+    </p>
+       
+   </div>
+
     <input type="hidden" id="id" name="id" value="{{ res.id }}">
-    <input id="submit" type="submit" value="Обновить">
+    <div style="position: relative; top: -10px;">
+        <input id="submit" type="submit" value="Обновить" >
+    </div>
+    
+
+</div>
 
 
 </form>
 
-
-
-<body>
-<h1>Hello</h1>
 </body>
 </html>

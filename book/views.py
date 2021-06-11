@@ -10,7 +10,7 @@ from django.views import View
 class BookView(View):
 
     def get(self, request):
-        res = SimpleBook.objects.all().order_by('name')
+        res = SimpleBook.objects.all().order_by('second_name')
         return render(request, 'pb.html', {'res': res})
 
 
@@ -21,9 +21,20 @@ class NewContact(View):
 
     def post(self, request):
         new_entry = SimpleBook(
-            name=request.POST.get("name"),
-            phone=request.POST.get("phone"),
-            e_mail=request.POST.get("email"),
+            first_name=request.POST.get("first_name"),
+            second_name=request.POST.get("second_name"),
+            fathers_name=request.POST.get("fathers_name"),
+
+            phone1=request.POST.get("phone1"),
+            phone2=request.POST.get("phone2"),
+            phone3=request.POST.get("phone3"),
+
+            email=request.POST.get("email"),
+
+            company=request.POST.get("company"),
+            job_title=request.POST.get("job_title"),
+            address=request.POST.get("address"),
+
             more=request.POST.get("more")
         )
         new_entry.save()
@@ -33,14 +44,20 @@ class NewContact(View):
 class UpdateContact(View):
     def get(self, request):
         obj = SimpleBook.objects.get(id=request.GET.get('id'))
-        print('res:', obj.name)
         return render(request, 'uc.html', {'res': obj})
 
     def post(self, request):
         updated_entry = SimpleBook.objects.get(id=request.POST.get('id'))  # object to update
-        updated_entry.name = request.POST.get('name')
-        updated_entry.phone = request.POST.get('phone')
-        updated_entry.e_mail = request.POST.get('email')
+        updated_entry.first_name = request.POST.get('first_name')
+        updated_entry.second_name = request.POST.get('second_name')
+        updated_entry.fathers_name = request.POST.get('fathers_name')
+        updated_entry.phone1 = request.POST.get('phone1')
+        updated_entry.phone2 = request.POST.get('phone2')
+        updated_entry.phone3 = request.POST.get('phone3')
+        updated_entry.email = request.POST.get('email')
+        updated_entry.company = request.POST.get('company')
+        updated_entry.job_title = request.POST.get('job_title')
+        updated_entry.address = request.POST.get('address')
         updated_entry.more = request.POST.get('more')
         updated_entry.save()
         return HttpResponseRedirect("/phone_book/")

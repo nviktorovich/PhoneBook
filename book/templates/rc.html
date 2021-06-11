@@ -9,16 +9,37 @@
     {% csrf_token %}
     <h1>Вы действительно хотите удалить контакт</h1>
     <div>
-        <p>name: {{ res.name }}</p>
+        <p>Фамилия: {{ res.second_name }}</p>
     </div>
     <div>
-        <p>phone: {{ res.phone }}</p>
+        <p>Имя: {{ res.first_name }}</p>
     </div>
     <div>
-        <p>email: {{ res.e_mail }}</p>
+        <p>Отчество: {{ res.fathers_name }}</p>
     </div>
     <div>
-        <p>more: {{ res.more }}</p>
+        <p>Телефон1: {{ res.phone1 }}</p>
+    </div>
+    <div>
+        <p>Телефон2: {{ res.phone2 }}</p>
+    </div>
+    <div>
+        <p>Телефон3: {{ res.phone3 }}</p>
+    </div>
+    <div>
+        <p>email: {{ res.email }}</p>
+    </div>
+    <div>
+        <p>Компания: {{ res.company }}</p>
+    </div>
+    <div>
+        <p>Должность: {{ res.job_title }}</p>
+    </div>
+    <div>
+        <p>Адрес: {{ res.address }}</p>
+    </div>
+    <div>
+        <p>Дополнительно: {{ res.more }}</p>
     </div>
 
     <input type="hidden" id="id" name="id" value={{ res.id }}>

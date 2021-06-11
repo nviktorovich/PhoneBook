@@ -5,20 +5,47 @@
     <title>New Contact</title>
 </head>
 
+<body>
 <form method="post" enctype="multipart/form-data" action="/phone_book/new/">
     {% csrf_token %}
-    <input type="text" id="name" name="name">
-    <input type="text" id="phone" name="phone">
-    <input type="text" id="email" name="email">
-    <input type="text" id="more" name="more">
+
+    <p>
+        <label for="first_name">Фамилия: </label><input type="text" id="first_name" name="first_name">
+    </p>
+    <p>
+        <label for="second_name">Имя: </label><input type="text" id="second_name" name="second_name">
+    </p>
+    <p>
+        <label for="fathers_name">Отчетсво: </label><input type="text" id="fathers_name" name="fathers_name">
+    </p>
+    <p>
+        <label for="company">Организация: </label><input type="text" id="company" name="company">
+    </p>
+    <p>
+        <label for="job_title">Должность: </label><input type="text" id="job_title" name="job_title">
+    </p>
+    <p>
+        <label for="phone1">Телефон №1: </label><input type="text" id="phone1" name="phone1">
+    </p>
+    <p>
+        <label for="phone2">Телефон №2: </label><input type="text" id="phone2" name="phone2">
+    </p>
+    <p>
+        <label for="phone3">Телефон №3: </label><input type="text" id="phone3" name="phone3">
+    </p>
+    <p>
+        <label for="email">Email: </label><input type="text" id="email" name="email">
+    </p>
+    <p>
+        <label for="address">Адрес: </label><input type="text" id="address" name="address" size="60">
+    </p>
+    <p>
+        <label for="more">Дополнительно </label><input type="text" id="more" name="more" size="60">
+    </p>
+
     <input id="submit" type="submit">
 
 
 </form>
-
-
-
-<body>
-<h1>Hello</h1>
 </body>
 </html>
