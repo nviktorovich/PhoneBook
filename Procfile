@@ -1,1 +1,1 @@
-web: gunicorn pbtest1.wsgi --log-file -
+web: gunicorn phonebookdj1.git.wsgi --log-file -
