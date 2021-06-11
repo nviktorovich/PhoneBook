@@ -1,1 +1,1 @@
-web: gunicorn phonebookdjango10.wsgi --log-file -
+web: gunicorn pb-1-0.wsgi --log-file -
