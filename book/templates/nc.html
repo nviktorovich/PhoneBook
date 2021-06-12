@@ -8,43 +8,106 @@
 <body>
 <form method="post" enctype="multipart/form-data" action="/phone_book/new/">
     {% csrf_token %}
+<div class="container" style="background-color: white; margin: 1rem auto; border: 5px solid #405798; border-radius: 10px; text-indent: 1.5em; position: relative;">
+<table style="width:100%">
+<tr style="text-align: left; white-space:nowrap;">
+<th>
+    <p>
+        <label for="first_name" style="display: block;">Фамилия: </label><input type="text" id="first_name" name="first_name" size="40">
+    </p>
+</th>
 
+<th>
     <p>
-        <label for="first_name">Фамилия: </label><input type="text" id="first_name" name="first_name">
+        <label for="second_name" style="display: block;">Имя: </label><input type="text" id="second_name" name="second_name" size="40">
     </p>
-    <p>
-        <label for="second_name">Имя: </label><input type="text" id="second_name" name="second_name">
-    </p>
-    <p>
-        <label for="fathers_name">Отчетсво: </label><input type="text" id="fathers_name" name="fathers_name">
-    </p>
-    <p>
-        <label for="company">Организация: </label><input type="text" id="company" name="company">
-    </p>
-    <p>
-        <label for="job_title">Должность: </label><input type="text" id="job_title" name="job_title">
-    </p>
-    <p>
-        <label for="phone1">Телефон №1: </label><input type="text" id="phone1" name="phone1">
-    </p>
-    <p>
-        <label for="phone2">Телефон №2: </label><input type="text" id="phone2" name="phone2">
-    </p>
-    <p>
-        <label for="phone3">Телефон №3: </label><input type="text" id="phone3" name="phone3">
-    </p>
-    <p>
-        <label for="email">Email: </label><input type="text" id="email" name="email">
-    </p>
-    <p>
-        <label for="address">Адрес: </label><input type="text" id="address" name="address" size="60">
-    </p>
-    <p>
-        <label for="more">Дополнительно </label><input type="text" id="more" name="more" size="60">
-    </p>
+</th>
 
-    <input id="submit" type="submit">
+<th>
+    <p>
+        <label for="fathers_name" style="display: block;">Отчетсво: </label><input type="text" id="fathers_name" name="fathers_name" size="40">
+    </p>
+</th>    
+</tr>
+</table>
 
+
+<table style="width:100%">
+<tr style="text-align: left; white-space:nowrap;">
+<th>
+    <p>
+        <label for="company" style="display: block;">Организация: </label><input type="text" id="company" name="company" size="70">
+    </p>
+</th>
+
+<th>
+    <p>
+        <label for="job_title" style="display: block;">Должность: </label><input type="text" id="job_title" name="job_title" size="40">
+    </p>
+</th>
+</tr>    
+</table>
+
+<table style="width:100%">
+<tr style="text-align: left; white-space:nowrap;">
+<th>
+    <p>
+        <label for="phone1" style="display: block;">Телефон №1: </label><input type="number" max="89999999999" id="phone1" name="phone1">
+    </p>
+</th>    
+
+
+<th>
+    <p>
+        <label for="phone2" style="display: block;">Телефон №2: </label><input type="number"  max="89999999999" id="phone2" name="phone2">
+    </p>
+</th>
+
+
+<th>
+    <p>
+        <label for="phone3" style="display: block;">Телефон №3: </label><input type="number" max="89999999999" id="phone3" name="phone3">
+    </p>
+</th>
+
+<th>
+    <p>
+        <label for="email" style="display: block;">Email: </label><input type="text" id="email" name="email" size="30">
+    </p>
+</th>
+
+
+</tr>
+
+
+
+</table>
+
+<table style="width:100%">
+<tr style="text-align: left; white-space:nowrap;">
+<th>
+    <p>
+        <label for="address" style="display: block;">Адрес: </label><textarea name="address" id="address" cols="70" rows="2"></textarea>
+    </p>
+</th>
+</tr>
+
+</table>
+
+<table style="width:100%">
+<tr style="text-align: left; white-space:nowrap;">
+<th>
+    <p>
+        <label for="more" style="display: block;">Дополнительно </label><textarea name="more" id="more" cols="70" rows="2"></textarea>
+    </p>
+</th>
+    
+</tr>
+
+</table>
+    <input id="submit" type="submit" value="Создать" style="position: relative; top: -10%;">
+
+</div>
 
 </form>
 </body>
