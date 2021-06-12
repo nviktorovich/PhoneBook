@@ -84,16 +84,36 @@ WSGI_APPLICATION = 'phone_book.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'phone_book',
+#         'USER': 'user',
+#         'PASSWORD': 'user',
+#         'HOST': '127.0.0.1',
+#         'PORT': 3306,
+#         'OPTIONS': {'charset': 'utf8'}
+# }
+# }
+
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'phone_book',
-        'USER': 'user',
-        'PASSWORD': 'user',
-        'HOST': '127.0.0.1',
-        'PORT': 3306,
-        'OPTIONS': {'charset': 'utf8'}
-}
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'dpor27itveck3',
+
+        'USER': 'beisbjocyoshyg',
+
+        'PASSWORD': '7641c8e60c6973a5507c04a9947dccfb80d6c027aeabb4d428ef1ee8939ec746',
+
+        'HOST': 'ec2-3-215-57-87.compute-1.amazonaws.com',
+
+        'PORT': '5432',
+
+    }
+
 }
 
 
