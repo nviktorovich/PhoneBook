@@ -84,17 +84,20 @@ WSGI_APPLICATION = 'phone_book.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'phone_book',
-        'USER': 'user',
-        'PASSWORD': 'user',
-        'HOST': '127.0.0.1',
-        'PORT': 3306,
-        'OPTIONS': {'charset': 'utf8'}
-}
-}
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'phone_book',
+#         'USER': 'user',
+#         'PASSWORD': 'user',
+#         'HOST': '127.0.0.1',
+#         'PORT': 3306,
+#         'OPTIONS': {'charset': 'utf8'}
+# }
+# }
 
 # DATABASES = {
 #
@@ -153,5 +156,3 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-prod_db = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
