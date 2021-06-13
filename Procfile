@@ -1,1 +1,1 @@
-web: gunicorn djangophonebook2.wsgi --log-file -
+web: gunicorn phone_book.wsgi --log-file -
