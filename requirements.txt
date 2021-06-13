@@ -11,3 +11,4 @@ sounddevice==0.4.1
 sqlparse==0.4.1
 whitenoise==5.2.0
 psycopg2
+dotenv
